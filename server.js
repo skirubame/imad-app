@@ -1,4 +1,4 @@
-var express = require('express'); //create web server listen port and handling http
+var express = require('express'); //create web server listen port 
 var morgan = require('morgan'); //http logs
 var path = require('path');
 
