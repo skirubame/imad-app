@@ -105,7 +105,7 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/:articlename', function(req,res) {
     var article=req.param.articlename;
-    res.send(createtemplate(articles(article)));
+    res.send(createtemplate(articles[article]));
 });
 app.get('/article-two', function(req,res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
