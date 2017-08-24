@@ -3,11 +3,28 @@ var morgan = require('morgan'); //http logs
 var path = require('path');
 
 var app = express();
-var articleOne={
-    title:'Article-One',
+var article = {
+     articleOne : {title:'Article-One',
     heading:'Article',
     date:'August 17',
-    content:    `<p>
+    content:    ` <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+         <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+         <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+` 
+},
+articleTwo :{title:'Article-One',
+    heading:'Article',
+    date:'August 17',
+    content:    ` <p>
             THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
             
         </p>
@@ -19,9 +36,25 @@ var articleOne={
             THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
             
         </p> `
-    
-};
+    },
+ articleThree: {title:'Article-One',
+    heading:'Article',
+    date:'August 17',
+    content:    ` <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+         <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+         <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p> `
+    }
 
+};
 function createtemplate(data){
  title=data.title;
  heading=data.heading;
@@ -70,8 +103,9 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/article-one', function(req,res) {
-    res.send(createtemplate(articleOne));
+app.get('/:articlename', function(req,res) {
+    var article=req.param.articlename;
+    res.send(createtemplate(articles(article)));
 });
 app.get('/article-two', function(req,res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
