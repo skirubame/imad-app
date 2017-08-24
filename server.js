@@ -3,6 +3,63 @@ var morgan = require('morgan'); //http logs
 var path = require('path');
 
 var app = express();
+var articleOne={
+    title:'Article-One',
+    heading:'Article',
+    date:'August 17',
+    content:    `<p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+         <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p>
+         <p>
+            THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed THis is the content to be diplayed
+            
+        </p> `
+    
+};
+
+function createtemplate(data){
+ title=data.title;
+ heading=data.heading;
+ date=data.date;
+ content=data.content;
+
+var template = 
+ `<html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name = "viewport" content="width-device-width, intial-scale=2"/>
+          <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+<body>
+<div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+        <h3>
+            ${heading}
+    
+        </h3>
+    <div>
+        ${date}
+    </div>    
+    <div>
+      ${content}
+    </div>
+</div>
+    </body>`
+    
+;
+return template;
+}
+
 app.use(morgan('combined'));
 //what to do 
 app.get('/', function (req, res) {
@@ -14,7 +71,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/article-one', function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send(createtemplate(articleOne));
 });
 app.get('/article-two', function(req,res) {
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
