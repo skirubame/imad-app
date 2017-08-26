@@ -93,7 +93,12 @@ var template =
 ;
 return template;
 }
+var counter=0;
 
+app.get('/counter',function(req,res) {
+  counter=counter+1;
+  res.send(counter.toString());
+});
 app.use(morgan('combined'));
 //what to do 
 app.get('/', function (req, res) {
