@@ -105,7 +105,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/:articlename', function(req,res) {
-    var article=req.params.article;
+    var article=req.params.articlename;
     res.send(createtemplate(article[article]));
 });
 app.get('/article-two', function(req,res) {
