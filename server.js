@@ -3,7 +3,7 @@ var morgan = require('morgan'); //http logs
 var path = require('path');
 
 var app = express();
-var articleS = {
+var articles = {
     'article-one': {title:'Article-One',
     heading:'Article',
     date:'August 17',
@@ -106,7 +106,7 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/:articlename', function(req,res) {
     var article=req.params.articlename;
-    res.send(createtemplate(article[article]));
+    res.send(createtemplate(articles[article]));
 });
 
 
