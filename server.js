@@ -3,7 +3,7 @@ var morgan = require('morgan'); //http logs
 var path = require('path');
 
 var app = express();
-var article = {
+var articleS = {
     'article-one': {title:'Article-One',
     heading:'Article',
     date:'August 17',
