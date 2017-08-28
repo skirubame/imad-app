@@ -109,14 +109,6 @@ app.get('/', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-var names=[];
-app.get('/submit-name',function(req,res) {//url://submit-name?name=xxxx
-  var name=req.query.name;
-   names.push(name);
-   //JSON java script object notion object to strings
-   
-   res.send(JSON.stringify(names));
-});
 app.get('/:articlename', function(req,res) {
     var article=req.params.articlename;
     res.send(createtemplate(articles[article]));
