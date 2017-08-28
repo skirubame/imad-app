@@ -20,8 +20,6 @@ var button=document.getElementById('counter');
     
 };
 //var
-var nameInput=document.getElementById('name');
-var name=nameInput.value;
 var submit=document.getElementById('submit_btn');
 submit.onclick=function() {
      var request=new XMLHttpRequest();
@@ -44,6 +42,9 @@ for(var i=0;i<names.length;i++) {
     }
     
     };
+    var nameInput=document.getElementById('name');
+var name=nameInput.value;
+
   request.open('GET','http://kirubakarans.imad.hasura-app.io/submit-name='+name,true);
   request.send(null); 
     
