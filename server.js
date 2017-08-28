@@ -132,7 +132,7 @@ app.listen(port,function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
 var names=[];
-app.get('/submit-name/:name',function(req,res) {
+app.get('/submit-name',function(req,res) {//url://submit-name?name=xxxx
    var name=req.params.name;
    names.push(name);
    //JSON java script object notion object to strings
