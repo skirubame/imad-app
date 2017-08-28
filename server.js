@@ -133,7 +133,7 @@ app.listen(port,function () {
 });
 var names=[];
 app.get('/submit-name',function(req,res) {//url://submit-name?name=xxxx
-   var name=req.params.name;
+   var name=req.query.name;
    names.push(name);
    //JSON java script object notion object to strings
    
