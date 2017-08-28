@@ -56,6 +56,7 @@ var articles = {
     }
 
 };
+
 function createtemplate(data){
  title=data.title;
  heading=data.heading;
