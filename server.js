@@ -153,7 +153,6 @@ app.get('/articles/:articlename', function(req,res) {
     }    
     }
 }); 
-    res.send(createtemplate(articles[article]));
 });
 
 app.get('/ui/main.js', function (req,res) {
