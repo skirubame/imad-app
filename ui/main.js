@@ -24,7 +24,7 @@ submit.onclick=function() {
  console.log(username);
  console.log(password);
   request.open('POST','http://kirubakarans.imad.hasura-app.io/submit-name?name=' + name, true);
-  request.sendRequestHeader('Content-Type','application/json');
+  request.setRequestHeader('Content-Type','application/json');
   request.send(JSON.stringify({username:username,password:password} )); 
     
 };
