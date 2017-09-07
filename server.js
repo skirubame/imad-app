@@ -14,8 +14,9 @@ var config = {
     
 };
 var pool = new Pool(config);
-app.use(bodyParser.json());
+
 var app = express();
+app.use(bodyParser.json());
 var articles = {
     'article-one': {title:'Article-One',
     heading:'Article',
