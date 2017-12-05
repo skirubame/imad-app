@@ -208,7 +208,9 @@ app.get('/articles/:articlename', function(req,res) {
     }
 }); 
 });
-
+app.get('map.html',function(req,res){
+    res.sendFile(path.join(__dirname,'map.html'));
+});
 app.get('/ui/main.js', function (req,res) {
     res.sendFile(path.join(__dirname,'ui','main.js'));
 });
